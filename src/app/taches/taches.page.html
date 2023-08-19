@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>taches</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <app-taches-item *ngFor="let tache of taches" [tacheItem]="tache"></app-taches-item>
+  </ion-list>
+  <ion-button (click)="AddTache()" >Ajouter une tâche</ion-button>
+</ion-content>
+
+

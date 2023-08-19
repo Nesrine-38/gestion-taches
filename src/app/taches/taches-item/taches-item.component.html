@@ -1,0 +1,16 @@
+
+<ion-item [routerLink]="['./',tacheItem?.id]">
+  <ion-avatar slot="start">
+    <ion-img [src]="tacheItem?.imageUrl"></ion-img>
+  </ion-avatar>
+  <ion-label>
+    {{ tacheItem?.title }}
+  </ion-label>
+</ion-item>
+<ion-item>
+  <ion-checkbox labelPlacement="start" [indeterminate]="true">cocher ici si votre tache est terminé </ion-checkbox>
+</ion-item>
+
+
+
+

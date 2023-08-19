@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>form-tache</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">form-tache</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+        <form (ngSubmit)="handleSubmit()">
+          <ion-item>
+            <ion-label position="stacked">Titre</ion-label>
+            <ion-input type="text" [(ngModel)]="tache.title" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Description</ion-label>
+            <ion-textarea [(ngModel)]="tache.description" required></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Date d'échéance</ion-label>
+            <ion-datetime [(ngModel)]="tache.date_echeance" display-format="DD MMM YYYY" required></ion-datetime>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">ImageUrl</ion-label>
+            <ion-input type="text" [(ngModel)]="tache.imageUrl" required (change)="handleImage($event)"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Priorité</ion-label>
+            <ion-select [(ngModel)]="tache.priorites" required>
+              <ion-select-option value="élevée">Élevée</ion-select-option>
+              <ion-select-option value="moyenne">Moyenne</ion-select-option>
+              <ion-select-option value="basse">Basse</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-button type="submit" expand="full">Ajouter</ion-button>
+        </form>
+</ion-content>
+
+
+
